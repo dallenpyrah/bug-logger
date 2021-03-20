@@ -3,11 +3,11 @@ import { BadRequest } from '../utils/Errors'
 
 class BugsService {
   async editBugStatus(id, body) {
-    return await dbContext.Bugs.findByIdAndUpdate(id, body).populate('creatorId')
+    return await dbContext.Bugs.findByIdAndUpdate(id, body).populate('creator')
   }
 
   async editBug(id, body) {
-    return await dbContext.Bugs.findByIdAndUpdate(id, body).populate('creatorId')
+    return await dbContext.Bugs.findByIdAndUpdate(id, body).populate('creator')
   }
 
   async find(query = {}) {

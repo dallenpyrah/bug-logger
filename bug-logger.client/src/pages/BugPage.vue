@@ -11,9 +11,11 @@
         <h1>
           Hello from the bug page!
         </h1>
-        <button class="btn btn-success" :data-target="`#create-bug` + state.bug._id" data-toggle="modal" aria-hidden="true">
-          Create Bug
-        </button>
+        <div v-if="state.user.isAuthenticated">
+          <button class="btn btn-success" :data-target="`#create-bug` + state.bug._id" data-toggle="modal" aria-hidden="true">
+            Create Bug
+          </button>
+        </div>
         <Bug v-for="bug in state.bug" :key="bug.id" :bug="bug" />
       </div>
     </div>
@@ -31,6 +33,7 @@ export default {
   name: 'BugPage',
   setup() {
     const state = reactive({
+      user: computed(() => AppState.user),
       bug: computed(() => AppState.bugs),
       newBug: {}
     })

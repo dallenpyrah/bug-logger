@@ -3,11 +3,11 @@ import { BadRequest } from '../utils/Errors'
 
 class NotesService {
   async deleteNote(id) {
-    return await dbContext.Notes.findByIdAndDelete(id).populate('creatorId')
+    return await dbContext.Notes.findByIdAndDelete(id).populate('creator')
   }
 
   async editNote(id, body) {
-    return await dbContext.Notes.findByIdAndUpdate(id, body).populate('creatorId')
+    return await dbContext.Notes.findByIdAndUpdate(id, body).populate('creator')
   }
 
   async find(query = {}) {

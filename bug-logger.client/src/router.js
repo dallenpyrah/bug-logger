@@ -25,14 +25,12 @@ const routes = [
   {
     path: '/bugpage',
     name: 'BugPage',
-    component: loadPage('BugPage'),
-    beforeEnter: authGuard
+    component: loadPage('BugPage')
   },
   {
     path: '/bugdetailspage/:id',
     name: 'BugDetailsPage',
-    component: loadPage('BugDetailsPage'),
-    beforeEnter: authGuard
+    component: loadPage('BugDetailsPage')
   }
 ]
 

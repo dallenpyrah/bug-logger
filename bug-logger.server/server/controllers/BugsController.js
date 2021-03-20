@@ -11,8 +11,8 @@ export class BugsController extends BaseController {
       .get('', this.getAll)
       // NOTE: Beyond this point all routes require Authorization tokens (the user must be logged in)
       .get('/:id/notes', this.getNotesByBugId)
-      .use(Auth0Provider.getAuthorizedUserInfo)
       .get('/:id', this.getBugById)
+      .use(Auth0Provider.getAuthorizedUserInfo)
       .post('', this.create)
       .put('/:id', this.editBug)
       .delete('/:id', this.deleteBug)
@@ -55,7 +55,7 @@ export class BugsController extends BaseController {
 
   async editBug(req, res, next) {
     try {
-      if (req.body.closed === true) {
+      if (req.body.closed === true || req.body.closed === false) {
         req.body.closed = false
         res.send(await bugsService.editBug(req.params.id, req.body))
       } else {
