@@ -1,8 +1,23 @@
 <template>
   <div class="container-fluid">
-    <div class="row">
-      <div class="col-12">
-        <div class="card">
+    <div class="row mt-5">
+      <div class="col-3 mt-5">
+        <div v-if="state.bug.creator && state.user.email == state.bug.creator.email">
+          <button v-if="state.bug.closed === false" class="btn btn-success m-2" :data-target="`#edit-bug` + state.bug.id" data-toggle="modal" aria-hidden="true">
+            Edit Bug
+          </button>
+          <button v-if="state.bug.closed === false" class="btn btn-danger m-2" @click="toggleCloseBug">
+            Close Bug
+          </button>
+        </div>
+        <div v-if="state.user.isAuthenticated">
+          <button class="btn btn-success" :data-target="`#create-note` + state.notes._id" data-toggle="modal" aria-hidden="true">
+            Create Note
+          </button>
+        </div>
+      </div>
+      <div class="col-6 mt-5">
+        <div class="card bg-dark">
           <div class="card-img-top" v-if="state.bug && state.bug.creator">
             <img :src="state.bug.creator.picture" alt="">
           </div>
