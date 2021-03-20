@@ -40,8 +40,18 @@ export default {
       async createBug() {
         await bugsService.createBug(state.newBug)
       },
+      async findOpenBugs() {
+        await bugsService.getAllBugs()
+        const openBugs = state.bug.filter(closed => closed.closed === false)
+        console.log(openBugs)
+        AppState.bugs = openBugs
+      },
       async findClosedBugs() {
-        await bugsService.getClosedBugs(state.bug.closed)
+        await bugsService.getAllBugs()
+        const closedBugs = state.bug.filter(closed => closed.closed === true)
+        console.log(closedBugs)
+        console.log(closedBugs)
+        AppState.bugs = closedBugs
       }
     }
   },

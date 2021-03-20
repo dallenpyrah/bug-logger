@@ -3,16 +3,6 @@ const { logger } = require('../utils/Logger')
 const { api } = require('./AxiosService')
 
 class BugsService {
-  async getClosedBugs(closed) {
-    try {
-      const res = await api.get('api/bugs', closed === false)
-      console.log(res.data)
-      AppState.bugs = res.data
-    } catch (error) {
-      logger(error)
-    }
-  }
-
   async getAllBugs() {
     try {
       const res = await api.get('api/bugs')

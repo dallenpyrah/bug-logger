@@ -8,13 +8,13 @@
               {{ bug.title }}
             </h3>
             <h3 v-if="bug.closed">
-              <span class="badge badge-success">
-                OPEN
+              <span class="badge badge-danger">
+                CLOSED
               </span>
             </h3>
             <h3 v-else>
-              <span class="badge badge-danger">
-                CLOSED
+              <span class="badge badge-success">
+                OPEN
               </span>
             </h3>
           </router-link>
