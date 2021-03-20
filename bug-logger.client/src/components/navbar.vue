@@ -1,13 +1,10 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
-      <div class="d-flex flex-column align-items-center">
-        <img
-          alt="logo"
-          src="../assets/img/cw-logo.png"
-          height="45"
-        />
-      </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <router-link class="navbar-brand d-flex mt-1" :to="{ name: 'Home' }">
+      <i class="fa fa-bug" aria-hidden="true"></i>
+      <h6 class="ml-2">
+        BUG LOGGER
+      </h6>
     </router-link>
     <button
       class="navbar-toggler"
@@ -122,6 +119,9 @@ a:hover {
   text-transform: uppercase;
 }
 .nav-item .nav-link.router-link-exact-active{
-  color: var(--primary);
+  color: var(--danger);
+}
+.nav-fixed{
+  position: fixed;
 }
 </style>
