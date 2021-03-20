@@ -1,11 +1,11 @@
 <template>
   <div class="container-fluid">
     <div class="row justify-content-center">
-      <button class="dropdown-item" type="button" @click="findOpenBugs">
-        Open Bug
+      <button class="btn btn-success" type="button" @click="findOpenBugs">
+        Open Bugs
       </button>
-      <button class="dropdown-item" type="button" @click="findClosedBugs">
-        Closed Bug
+      <button class="btn btn-danger" type="button" @click="findClosedBugs">
+        Closed Bugs
       </button>
       <div class="col-12 text-center">
         <h1>

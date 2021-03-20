@@ -50,7 +50,8 @@ export class NotesController extends BaseController {
 
   async deleteNote(req, res, next) {
     try {
-      res.send(await notesService.deleteNote(req.params.id))
+      const deleted = await notesService.deleteNote(req.params.id)
+      res.send(deleted)
     } catch (error) {
       next(error)
     }
