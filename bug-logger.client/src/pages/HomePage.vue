@@ -29,7 +29,7 @@
     <div class="row justify-content-end">
       <div class="col-3 mt-card">
         <div class="card bg-danger text-light text-center">
-          <h6 class="p-2 mt-1">TOTAL OF OF 80 MILLION <i class="fa fa-bug ml-3 mr-3" aria-hidden="true"></i> TRACKED SINCE 2006</h6>
+          <h6 class="p-2 mt-1">80 MILLION <i class="fa fa-bug ml-3 mr-3" aria-hidden="true"></i> TRACKED SINCE 2006</h6>
         </div>
       </div>
       <div class="col-8 mt-3 text-center">

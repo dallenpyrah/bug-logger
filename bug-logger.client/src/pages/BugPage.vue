@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid bg-light">
     <div class="row justify-content-center mt-bug">
-      <div class="col-6 mt-3">
+      <div class="col-6">
         <div class="fixed">
           <button class="btn btn-success m-5" type="button" @click="findOpenBugs">
             Active Bugs
@@ -30,7 +30,7 @@
           </div>
         </div>
       </div>
-      <div class="col-4 overflow">
+      <div class="col-4 mt-5 overflow">
         <Bug v-for="bug in state.bug" :key="bug.id" :bug="bug" />
       </div>
     </div>
@@ -94,6 +94,6 @@ export default {
 position: fixed;
 }
 .mt-bug{
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 </style>

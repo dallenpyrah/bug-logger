@@ -1,68 +1,86 @@
 <template>
-  <div class="container-fluid">
-    <div class="row mt-5">
-      <div class="col-3 mt-5">
-        <div v-if="state.bug.creator && state.user.email == state.bug.creator.email">
-          <button v-if="state.bug.closed === false" class="btn btn-success m-2" :data-target="`#edit-bug` + state.bug.id" data-toggle="modal" aria-hidden="true">
-            Edit Bug
-          </button>
-          <button v-if="state.bug.closed === false" class="btn btn-danger m-2" @click="toggleCloseBug">
-            Close Bug
-          </button>
-        </div>
-        <div v-if="state.user.isAuthenticated">
-          <button class="btn btn-success" :data-target="`#create-note` + state.notes._id" data-toggle="modal" aria-hidden="true">
-            Create Note
-          </button>
-        </div>
-      </div>
-      <div class="col-6 mt-5">
-        <div class="card bg-dark">
-          <div class="card-img-top" v-if="state.bug && state.bug.creator">
-            <img :src="state.bug.creator.picture" alt="">
-          </div>
-          <h3>
-            <div v-if="state.bug.creator && state.user.email == state.bug.creator.email">
-              <button v-if="state.bug.closed === false" class="btn btn-success" :data-target="`#edit-bug` + state.bug.id" data-toggle="modal" aria-hidden="true">
+  <div class="container-fluid bg-light">
+    <div class="row mt-5 justify-content-center">
+      <div v-if="state.bug.creator && state.user.email == state.bug.creator.email" class="col-8 mt-5">
+        <div class="card text-center rounded p-2 bg-dark text-light">
+          <div>
+            <div class="row justify-content-around">
+              <button v-if="state.bug.closed === false" class="btn btn-success m-2" :data-target="`#edit-bug` + state.bug.id" data-toggle="modal" aria-hidden="true">
                 Edit Bug
               </button>
-              <button v-if="state.bug.closed === false" class="btn btn-success" @click="toggleCloseBug">
+              <button v-if="state.bug.closed === false" class="btn btn-danger m-2" @click="toggleCloseBug">
                 Close Bug
               </button>
+              <button class="btn btn-success m-2" :data-target="`#create-note` + state.notes._id" data-toggle="modal" aria-hidden="true">
+                Create Note
+              </button>
             </div>
-            {{ state.bug.title }}
-          </h3>
-          <h3>
-            {{ state.bug.description }}
-          </h3>
-          <h3 v-if="state.bug.creator">
-            {{ state.bug.creator.name }}
-          </h3>
-          <h3 v-if="state.bug.updatedAt">
-            Last Modified: {{ state.bug.updatedAt.slice(5, 7) }} - {{ state.bug.updatedAt.slice(8, 10) }} - {{ state.bug.updatedAt.slice(0, 4) }}
-          </h3>
+          </div>
+        </div>
+      </div>
+      <div v-else class="col-6 mt-5">
+        <div v-if="state.user.isAuthenticated" class="card rounded text-center p-2 bg-dark text-light">
+          <div>
+            <div class="row justify-content-around">
+              <button class="btn btn-success m-2" :data-target="`#create-note` + state.notes._id" data-toggle="modal" aria-hidden="true">
+                Create Note
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-8 mt-4">
+        <div class="card p-5 rounded bg-dark">
           <h3 v-if="state.bug.closed">
             <span class="badge badge-danger">
               CLOSED
             </span>
           </h3>
           <h3 v-else>
+            <h6 class="text-light" v-if="state.bug.updatedAt">
+              Bug Last Modified {{ state.bug.updatedAt.slice(5, 7) }} - {{ state.bug.updatedAt.slice(8, 10) }} - {{ state.bug.updatedAt.slice(0, 4) }}
+            </h6>
             <span class="badge badge-success">
               OPEN
             </span>
           </h3>
+          <div class="row mt-3 justify-content-center">
+            <div class="col-10">
+              <div class="card text-light p-3 mb-3 text-center bg-danger rounded mt-3">
+                <h3>Bug</h3>
+              </div>
+              <div class="card bug-height bg-light">
+                <div class="card-img-top" v-if="state.bug && state.bug.creator">
+                  <div class="row justify-content-between">
+                    <div class="col-3">
+                      <img class="p-3" :src="state.bug.creator.picture" width="100" alt="">
+                    </div>
+                    <div class="col-4 p-3">
+                      <h3 class="text-danger">
+                        {{ state.bug.title }}
+                      </h3>
+                      <h6>{{ state.bug.creator.name }}</h6>
+                    </div>
+                    <div class="col-4 p-4">
+                      <h6> {{ state.bug.description }} </h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-10">
+              <div class="card text-light p-3 text-center bg-success rounded mt-3">
+                <h3>Notes</h3>
+              </div>
+              <Note v-for="note in state.notes" :key="note.id" :note="note" />
+            </div>
+          </div>
         </div>
       </div>
-      <Note v-for="note in state.notes" :key="note.id" :note="note" />
-      <div v-if="state.user.isAuthenticated" class="col-2">
-        <button class="btn btn-success" :data-target="`#create-note` + state.notes._id" data-toggle="modal" aria-hidden="true">
-          Create Note
-        </button>
-      </div>
     </div>
+    <CreateNoteModal />
+    <EditBugModal />
   </div>
-  <CreateNoteModal />
-  <EditBugModal />
 </template>
 
 <script>
@@ -130,5 +148,7 @@ export default {
 </script>
 
 <style>
-
+.rounded{
+  border-radius: 2rem!important;
+}
 </style>
