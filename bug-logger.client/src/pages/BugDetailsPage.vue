@@ -18,8 +18,8 @@
           </div>
         </div>
       </div>
-      <div v-else class="col-6 mt-5">
-        <div v-if="state.user.isAuthenticated" class="card rounded text-center p-2 bg-dark text-light">
+      <div v-else class="col-5 mt-5">
+        <div v-if="state.bug.closed === false && state.user.isAuthenticated" class="card rounded text-center p-2 bg-dark text-light">
           <div>
             <div class="row justify-content-around">
               <button class="btn btn-success m-2" :data-target="`#create-note` + state.notes._id" data-toggle="modal" aria-hidden="true">
