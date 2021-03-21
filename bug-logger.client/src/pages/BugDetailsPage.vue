@@ -46,7 +46,7 @@
           </h3>
           <div class="row mt-3 justify-content-center">
             <div class="col-10">
-              <div class="card text-light p-3 mb-3 text-center bg-danger rounded mt-3">
+              <div class="card animate__animated animate__fadeInRight text-light p-3 mb-3 text-center bg-danger rounded mt-3">
                 <h3>Bug</h3>
               </div>
               <div class="card bug-height bg-light">
@@ -69,7 +69,7 @@
               </div>
             </div>
             <div class="col-10">
-              <div class="card text-light p-3 text-center bg-success rounded mt-3">
+              <div class="card animate__animated animate__fadeInLeft text-light p-3 text-center bg-success rounded mt-3">
                 <h3>Notes</h3>
               </div>
               <Note v-for="note in state.notes" :key="note.id" :note="note" />
@@ -92,6 +92,8 @@ import Note from '../components/Note'
 import CreateNoteModal from '../components/CreateNoteModal'
 import EditBugModal from '../components/EditBugModal'
 import swal from 'sweetalert'
+import 'animate.css'
+
 export default {
   name: 'BugDetailsPage',
   setup() {

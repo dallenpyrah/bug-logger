@@ -2,15 +2,15 @@
   <div class="container-fluid bg-light">
     <div class="row mt-homepage">
       <div class="col-6 text-left ml-5">
-        <h1 class="mt-5 text-big">
+        <h1 class="mt-5 text-danger animate__animated animate__fadeInLeft text-big">
           BUG LOGGER
         </h1>
-        <h6 class="mt-5 text-grey ml-5">
+        <h6 class="mt-5 animate__animated animate__fadeInRight ml-5">
           Your home for tracking all your bugs, discover more by traveling to the bugs page
         </h6>
         <div class="row mt-5 ml-5">
           <div class="col-1 text-right ml-5">
-            <i class="fa fa-arrow-circle-right hover text-success fa-4x" @click="routeToBugPage" aria-hidden="true"></i>
+            <i class="fa fa-arrow-circle-right hover text-danger fa-4x" @click="routeToBugPage" aria-hidden="true"></i>
           </div>
           <div class="col-9">
             <h4 class="mt-bug hover text-grey" @click="routeToBugPage">
@@ -20,16 +20,16 @@
         </div>
       </div>
       <div class="col-4 mt-description">
-        <h6><i class="fa fa-check mr-2" aria-hidden="true"></i> We are here to help you keep track of your bugs</h6>
+        <h6><i class="fa fa-check mr-2 animate__animated animate__fadeInRight" aria-hidden="true"></i> We are here to help you keep track of your bugs</h6>
         <h6 class="mt-4 text-grey">
-          <i class="fa fa-address-card mr-2 text-grey" aria-hidden="true"></i> No matter what they are you can count on us to keep you organized
+          <i class="fa fa-address-card mr-2 text-grey animate__animated animate__fadeInRight" aria-hidden="true"></i> No matter what they are you can count on us to keep you organized
         </h6>
       </div>
     </div>
     <div class="row justify-content-end">
       <div class="col-3 mt-card">
         <div class="card bg-danger text-light text-center">
-          <h6 class="p-2 mt-1">80 MILLION <i class="fa fa-bug ml-3 mr-3" aria-hidden="true"></i> TRACKED SINCE 2006</h6>
+          <h6 class="p-2 mt-1 animate__animated animate__bounceIn">80 MILLION <i class="fa fa-bug ml-3 mr-3" aria-hidden="true"></i> TRACKED SINCE 2006</h6>
         </div>
       </div>
       <div class="col-8 mt-3 text-center">
@@ -41,6 +41,7 @@
 
 <script>
 import { useRouter } from 'vue-router'
+import 'animate.css'
 export default {
   name: 'Home',
   setup() {

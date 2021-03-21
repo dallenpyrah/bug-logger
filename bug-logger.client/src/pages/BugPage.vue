@@ -3,13 +3,13 @@
     <div class="row justify-content-center mt-bug">
       <div class="col-6">
         <div class="fixed">
-          <button class="btn btn-success m-5" type="button" @click="findOpenBugs">
+          <button class="btn btn-success m-5 animate__animated animate__fadeInRight" type="button" @click="findOpenBugs">
             Active Bugs
           </button>
-          <button class="btn btn-danger m-5" type="button" @click="findClosedBugs">
+          <button class="btn btn-danger m-5 animate__animated animate__fadeInRight animate__delay-1s" type="button" @click="findClosedBugs">
             Closed Bugs
           </button>
-          <button class="btn btn-success m-5" :data-target="`#create-bug` + state.bug._id" data-toggle="modal" aria-hidden="true">
+          <button class="btn btn-success m-5 animate__animated animate__fadeInRight animate__delay-2s" :data-target="`#create-bug` + state.bug._id" data-toggle="modal" aria-hidden="true">
             Create Bug
           </button>
           <div class="col-10 ml-5 text-center">
@@ -44,6 +44,7 @@ import { AppState } from '../AppState'
 import Bug from '../components/Bug'
 import CreateBugModal from '../components/CreateBugModal'
 import { bugsService } from '../services/BugsService'
+import 'animate.css'
 export default {
   name: 'BugPage',
   setup() {
@@ -95,5 +96,8 @@ position: fixed;
 }
 .mt-bug{
   margin-top: 2rem;
+}
+:root {
+  --animate-delay: 0.5s;
 }
 </style>

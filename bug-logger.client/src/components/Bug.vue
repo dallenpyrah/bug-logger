@@ -1,6 +1,6 @@
 <template>
   <div class="col-12">
-    <div class="card bug shadow-sm m-2 text-center p-5 rounded-bug bg-dark text-light">
+    <div class="card bug animate__animated animate__fadeInRight shadow-sm m-2 text-center p-5 rounded-bug bg-dark text-light">
       <router-link :to="{ name: 'BugDetailsPage', params: {id: bug.id}}">
         <h3 class="text-light">
           {{ bug.title }}
@@ -23,6 +23,7 @@
 <script>
 import { computed, reactive } from 'vue'
 import { AppState } from '../AppState'
+import 'animate.css'
 export default {
   name: 'Bug',
   props: {
