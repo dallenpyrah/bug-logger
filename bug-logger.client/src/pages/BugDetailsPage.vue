@@ -59,7 +59,7 @@
                       <h3 class="text-danger">
                         {{ state.bug.title }}
                       </h3>
-                      <h6>{{ state.bug.creator.name }}</h6>
+                      <h6 class="text-grey">{{ state.bug.creator.name }}</h6>
                     </div>
                     <div class="col-4 p-4">
                       <h6> {{ state.bug.description }} </h6>
@@ -150,5 +150,8 @@ export default {
 <style>
 .rounded{
   border-radius: 2rem!important;
+}
+.text-grey{
+  color: rgb(80, 80, 80);
 }
 </style>

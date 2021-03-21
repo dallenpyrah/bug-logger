@@ -10,10 +10,10 @@
             <h3 class="text-success">
               {{ note.body }}
             </h3>
-            <h6>{{ note.creator.name }}</h6>
+            <h6 class="text-grey">{{ note.creator.name }}</h6>
           </div>
           <div class="col-4 p-4">
-            <h6 v-if="state.bug.closed === false"> <i class="fa fa-trash-o fa-2x mt-2 ml-5 text-danger" aria-hidden="true"></i> </h6>
+            <h6 v-if="state.bug.closed === false"> <i class="fa fa-trash-o fa-2x mt-2 ml-5 pointer text-danger" @click="deleteNote" aria-hidden="true"></i> </h6>
           </div>
         </div>
       </div>
@@ -76,5 +76,11 @@ export default {
 </script>
 
 <style>
+.pointer{
+  cursor: pointer;
+}
+.text-grey{
+  color: rgb(80, 80, 80);
+}
 
 </style>
