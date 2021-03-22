@@ -11,7 +11,7 @@
           </span>
         </h3>
         <h3 v-else>
-          <span class="badge badge-success">
+          <span class="badge badge-success text-light">
             OPEN
           </span>
         </h3>

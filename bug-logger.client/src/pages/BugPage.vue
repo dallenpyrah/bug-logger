@@ -4,18 +4,18 @@
       <div class="col-6">
         <div class="fixed">
           <div class="row" v-if="state.user.isAuthenticated">
-            <button class="btn btn-success m-5 animate__animated animate__fadeInRight" type="button" @click="findOpenBugs">
+            <button class="btn btn-success text-light m-5 animate__animated animate__fadeInRight" type="button" @click="findOpenBugs">
               Active Bugs
             </button>
             <button class="btn btn-danger m-5 animate__animated animate__fadeInRight animate__delay-1s" type="button" @click="findClosedBugs">
               Closed Bugs
             </button>
-            <button class="btn btn-success m-5 animate__animated animate__fadeInRight animate__delay-2s" :data-target="`#create-bug` + state.bug._id" data-toggle="modal" aria-hidden="true">
+            <button class="btn btn-success text-light m-5 animate__animated animate__fadeInRight animate__delay-2s" :data-target="`#create-bug` + state.bug._id" data-toggle="modal" aria-hidden="true">
               Create Bug
             </button>
           </div>
           <div class="row justify-content-center" v-else>
-            <button class="btn btn-success m-5 animate__animated animate__fadeInRight" type="button" @click="findOpenBugs">
+            <button class="btn btn-success text-light m-5 animate__animated animate__fadeInRight" type="button" @click="findOpenBugs">
               Active Bugs
             </button>
             <button class="btn btn-danger m-5 animate__animated animate__fadeInRight animate__delay-1s" type="button" @click="findClosedBugs">
@@ -30,10 +30,10 @@
               <h6 class="mt-4">
                 Browse through active bugs or create a bug that needs to be fixed.
               </h6>
-              <h6 class="mt-4">
+              <h6 class="mt-3">
                 <i class="fa fa-bug fa-2x" aria-hidden="true"></i>
               </h6>
-              <h6 class="mt-4">
+              <h6 class="mt-2">
                 Sort the bugs by currently active bugs or closed bugs.
               </h6>
             </div>

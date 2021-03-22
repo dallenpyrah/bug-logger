@@ -5,13 +5,13 @@
         <div class="card text-center rounded p-2 bg-dark text-light">
           <div>
             <div class="row justify-content-around">
-              <button v-if="state.bug.closed === false" class="btn btn-success m-2" :data-target="`#edit-bug` + state.bug.id" data-toggle="modal" aria-hidden="true">
+              <button v-if="state.bug.closed === false" class="btn btn-success m-2 text-light" :data-target="`#edit-bug` + state.bug.id" data-toggle="modal" aria-hidden="true">
                 Edit Bug
               </button>
               <button v-if="state.bug.closed === false" class="btn btn-danger m-2" @click="toggleCloseBug">
                 Close Bug
               </button>
-              <button class="btn btn-success m-2" :data-target="`#create-note` + state.notes._id" data-toggle="modal" aria-hidden="true">
+              <button class="btn btn-success m-2 text-light" :data-target="`#create-note` + state.notes._id" data-toggle="modal" aria-hidden="true">
                 Create Note
               </button>
             </div>
@@ -22,7 +22,7 @@
         <div v-if="state.bug.closed === false && state.user.isAuthenticated" class="card rounded text-center p-2 bg-dark text-light">
           <div>
             <div class="row justify-content-around">
-              <button class="btn btn-success m-2" :data-target="`#create-note` + state.notes._id" data-toggle="modal" aria-hidden="true">
+              <button class="btn btn-success text-light m-2" :data-target="`#create-note` + state.notes._id" data-toggle="modal" aria-hidden="true">
                 Create Note
               </button>
             </div>
@@ -40,7 +40,7 @@
             <h6 class="text-light" v-if="state.bug.updatedAt">
               Bug Last Modified {{ state.bug.updatedAt.slice(5, 7) }} - {{ state.bug.updatedAt.slice(8, 10) }} - {{ state.bug.updatedAt.slice(0, 4) }}
             </h6>
-            <span class="badge badge-success">
+            <span class="badge text-light badge-success">
               OPEN
             </span>
           </h3>
