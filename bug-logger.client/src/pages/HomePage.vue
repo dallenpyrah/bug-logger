@@ -13,7 +13,7 @@
             <i class="fa fa-arrow-circle-right hover text-danger fa-4x" @click="routeToBugPage" aria-hidden="true"></i>
           </div>
           <div class="col-9">
-            <h4 class="mt-bug hover text-grey hover animate__animated animate__shakeY animate__repeat-3 animate__delay-2s" @click="routeToBugPage">
+            <h4 class="mt-bug hover ml-3 text-grey hover animate__animated animate__shakeY animate__repeat-3 animate__delay-2s" @click="routeToBugPage">
               Bugs page
             </h4>
           </div>
