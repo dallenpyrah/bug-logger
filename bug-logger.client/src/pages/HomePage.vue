@@ -29,11 +29,22 @@
     <div class="row justify-content-end">
       <div class="col-3 mt-card">
         <div class="card bg-danger text-light text-center">
-          <h6 class="p-2 mt-1">80 MILLION <i class="fa fa-bug ml-3 mr-3" aria-hidden="true"></i> TRACKED SINCE 2006</h6>
+          <h6 class="p-2 mt-1">
+            80 MILLION <i class="fa fa-bug ml-3 mr-3" aria-hidden="true"></i> TRACKED SINCE 2006
+          </h6>
         </div>
       </div>
       <div class="col-8 text-center">
-        <img src="https://i.pinimg.com/originals/d8/e4/da/d8e4da1ae3d255699922b60a6d13ef86.gif" width="500">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-interval="3000">
+              <img src="https://i.pinimg.com/originals/d8/e4/da/d8e4da1ae3d255699922b60a6d13ef86.gif" width="500">
+            </div>
+            <div class="carousel-item" data-interval="3000">
+              <img src="https://22uwq52g97arrp8gs27uvdtd-wpengine.netdna-ssl.com/wp-content/uploads/sites/3/icon-browser-shield-files-large.png" width="300">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
