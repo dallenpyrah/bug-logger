@@ -13,7 +13,7 @@
             <i class="fa fa-arrow-circle-right hover text-danger fa-4x" @click="routeToBugPage" aria-hidden="true"></i>
           </div>
           <div class="col-9">
-            <h4 class="mt-bug hover text-grey" @click="routeToBugPage">
+            <h4 class="mt-bug hover text-grey hover" @click="routeToBugPage">
               Bugs page
             </h4>
           </div>
