@@ -55,7 +55,7 @@ export class BugsController extends BaseController {
 
   async editBug(req, res, next) {
     try {
-      req.body.creatorId = req.userInfo.id
+      // req.body.creatorId = req.userInfo.id
       if (req.body.closed === true || req.body.closed === false) {
         req.body.closed = false
         res.send(await bugsService.editBug(req.params.id, req.body))
@@ -69,7 +69,7 @@ export class BugsController extends BaseController {
 
   async deleteBug(req, res, next) {
     try {
-      req.body.creatorId = req.userInfo.id
+      // req.body.creatorId = req.userInfo.id
       if (req.body) {
         req.body.closed = true
         res.send(await bugsService.editBugStatus(req.params.id, req.body))

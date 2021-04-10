@@ -98,6 +98,6 @@ export default {
   margin-top: 7rem;
 }
 .mt-homepage{
-  margin-top: 4.8rem;
+  margin-top: 10rem;
 }
 </style>
